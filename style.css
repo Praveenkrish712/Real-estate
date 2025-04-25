@@ -1,0 +1,623 @@
+*{
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+.real-estate{
+    height: 100vh;
+    width: 100%;
+    background-image: url(Assets/home\ img.jpg) ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+  
+.real-estate::-webkit-scrollbar {
+    display: none;
+}
+  
+.header{
+    height: 14vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.header-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-menu nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
+}
+
+.header-menu nav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.header-menu nav ul a{
+    color: black;
+    text-decoration: none;
+}
+
+.header-menu li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    padding: 40px 0;
+}
+
+.header-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-number svg, p{
+    fill: black;
+    color: black;
+}
+
+.contact-number > p:hover{
+    cursor: pointer;
+}
+
+.profile svg{
+    fill: black;
+}
+
+.profile svg:hover{
+    cursor: pointer;
+}
+
+.creat-listing button{
+    color: white;
+    background-color: #0d5ed1;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.creat-listing button:hover{
+    cursor: pointer;
+}
+
+.home-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    gap: 10px   ;
+}
+
+.home-page p{
+    text-align: center;
+}
+
+.area-status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    gap: 10px;
+}
+
+.area-status h3{
+    padding: 10px;
+    background-color: white;
+}
+
+.area-status h3:hover{
+    cursor: pointer;
+}
+
+.property-details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.looking-for, .location, .property-size, .your-budget{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.search-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.search-button button{
+    padding: 10px 60px;
+    background-color: #00aeff;
+    font-size: large;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.looking-for select{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.location select{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.property-size select{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.your-budget select{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.Featured-Listings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    gap: 10px;
+}
+
+.listing-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 70px;
+}
+
+.listing-property{
+    height: 500px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.listing-details1{
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 20px;
+    height: 60%;
+    width: 100%;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    background-image: url(Assets/listing-details1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.listing-details2{
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 20px;
+    height: 300px;
+    width: 400px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    background-image: url(Assets/listing-details2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.listing-details3{
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 20px;
+    height: 300px;
+    width: 400px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    background-image: url(Assets/listing-details3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.listing-details1 p{
+    color: white;
+    background-color: #76c720;
+    padding: 5px;
+}
+.listing-details1 h4{
+    color: white;
+    background-color: #2b2728;
+    padding: 5px;
+    font-size: small;
+    font-weight: 300;
+    cursor: pointer;
+}
+.listing-details2 p{
+    color: white;
+    background-color: #76c720;
+    padding: 5px;
+}
+.listing-details2 h4{
+    color: white;
+    background-color: #2b2728;
+    padding: 5px;
+    font-size: small;
+    font-weight: 300;
+    cursor: pointer;
+}
+.listing-details3 p{
+    color: white;
+    background-color: #76c720;
+    padding: 5px;
+}
+.listing-details3 > h4{
+    color: white;
+    background-color: #2b2728;
+    padding: 5px;
+    font-size: small;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.sq-ft1{
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+}
+
+.featured-icons{
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.featured-icons svg{
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.listing-property > .listing-sq-ft > h3{
+    padding: 20px 20px 20px 0;
+}
+
+.listing-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.listing-property > h4{
+    padding-top: 15px;
+    margin-left: -300px;
+}
+
+.residential{
+    margin: 7% 15% 20px 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.residential-part1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+.residential-part1 h1{
+    padding: 30px 30px 10px 30px;
+}
+
+.residential-part1 p{
+    padding: 0px 30px 30px 30px;
+}
+
+.residential-part3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 30px;
+    padding: 0px 30px 30px 30px;
+}
+
+.apartment{
+    height: 230px;
+    width: 230px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 2px;
+    background-image: url(Assets/residential-part1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.residential-part2{
+    height: 500px;
+    width: 230px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 2px;
+    background-image: url(Assets/residential-part2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.studio{
+    height: 230px;
+    width: 230px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 2px;
+    background-image: url(Assets/listing-details2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.villa{
+    height: 230px;
+    width: 230px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 2px;
+    background-image: url(Assets/listing-details3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.office{
+    height: 230px;
+    width: 230px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 2px;
+    background-image: url(Assets/listing-details3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.shop{
+    height: 230px;
+    width: 230px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 2px;
+    background-image: url(Assets/listing-details1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.residential2 h1{
+    padding-bottom: 10px;
+}
+
+.residential-part4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.apartment, .residential-part2, .studio, .villa, .office, .shop{
+    padding: 10px;
+}
+
+.inquiry-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1000px;
+    width: 100%;
+    background-color: #224e70;
+    margin-top: 200px;
+}
+
+.inquirys h1{
+    padding: 5% 5% 25% 5%;
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+}
+
+.inquirys h2{
+    padding: 0% 5% 2% 5%;
+    font-size: 27px;
+    font-weight: 500;
+    color: white;
+}
+
+.inquirys p{
+    padding: 0 5% 5% 5%;
+    color: #a0b1bd;
+}
+
+.inquirys2 h2{
+    font-size: 27px;
+    font-weight: 500;
+    padding: 4% 5% 5% 5%;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.inquirys2 p{
+    color: #a0b1bd;
+    padding: 0 5% 5% 5%;
+}
+
+.inquirys3 > h2{
+    padding-top: 18%;
+}
+
+.inquiry-from2{
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: start;
+    gap: 10px;
+    height: 750px;
+    width: 450px;
+    background-color: white;
+    padding: 30px 30px 20px 30px ;
+}
+
+.inquiry-from2 > h4{
+    padding: 10px 5px 5px 0px;
+}
+
+.inquiry-from2 > select{
+    padding: 10px 300px 10px 10px;
+    border-radius: 5px;
+}
+
+.form > h4{
+    padding: 10px 5px 15px 0px;
+}
+
+.form > select{
+    padding: 10px 230px 10px 10px;
+    border-radius: 5px;
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 10px 0;
+    gap: 40px;
+}
+
+.form-container > input{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form-container2 > input{
+    padding: 10px 225px 10px 10px;
+    border-radius: 5px;
+}
+
+.location1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.location2> h4{
+    padding: 10px 10px 10px 0;
+}
+
+.location2 > select{
+    padding: 10px 70px 10px 10px;
+    border-radius: 5px;
+}
+
+.location3 > input{
+    margin-top: 40px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+}
+
+.property1 > h4{
+    padding: 10px 10px 10px 0;
+}
+
+.property1 > select{
+    padding: 10px 240px 10px 10px;
+    border-radius: 5px;
+}
+
+.agreement > h4{
+    padding: 10px 10px 10px 0;
+}
+
+.form-button > button{
+    padding: 10px 160px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #00aeff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .location2 > h4{
+    padding: 0px 10px 10px 0px;
+    margin-top: -20px;
+    margin-left: -40px;
+}
+
+.location2 > select{
+    margin-left: -60px;
+}
+
+.location3 > input{
+    padding: 10px;
+    border-radius: 5px;
+} */
