@@ -795,10 +795,16 @@
 }
 
 .meet-our-agents > h1{
+    opacity: 0;
+    margin-left: -400px;
     text-align: center;
     padding: 150px 0px 10px 0px;
     font-size: 30px;
     font-weight: 700;
+    animation: ani-left 0.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
 }
 
 .meet-our-agents > p{
@@ -817,10 +823,16 @@
 }
 
 .agent-member1{
+    opacity: 0;
+    margin-left: -400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: ani-left 0.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
 }
 
 .agent-member1 > img{
@@ -857,8 +869,14 @@
 }
 
 .testimonials > h1{
+    opacity: 0;
+    margin-left: -400px;
     text-align: center;
     padding: 70px 0px 10px 0px;
+    animation: ani-left 0.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
 }
 
 .testimonials > p{
@@ -875,6 +893,8 @@
 }
 
 .quote1, .quote2, .quote3{
+    opacity: 0;
+    margin-left: -400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -882,6 +902,10 @@
     height: 350px;
     width: 350px;
     background-color: #edf9ff;
+    animation: ani-left 0.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
 }
 
 .quote1 > p{
@@ -926,8 +950,14 @@
 }
 
 .discover > h3{
+    opacity: 0;
+    margin-left: -400px;
     color: white;
     padding-bottom: 5px;
+    animation: ani-left 0.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
 } 
 
 .discover > p{
@@ -936,8 +966,14 @@
 }
 
 .contact-us > h3{
+    opacity: 0;
+    margin-left: -400px;
     color: white;
     padding-bottom: 10px;
+    animation: ani-left 0.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
 }
 
 .contact-us > p{
@@ -952,8 +988,14 @@
 }
 
 .newsletter1 > h3{
+    opacity: 0;
+    margin-left: -400px;
     color: white;
     padding-bottom: 10px;
+    animation: ani-left 0.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
 }
 
 .newsletter1 > input{
