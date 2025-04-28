@@ -37,6 +37,9 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .header-menu nav{
@@ -1108,8 +1111,3 @@
 
 
 
-  @media (min-width :1150px) {
-        .header{
-            
-        }
-  }
