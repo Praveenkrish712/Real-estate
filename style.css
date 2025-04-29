@@ -8,17 +8,13 @@
 
 .real-estate{
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     background-image: url(Assets/home\ img4.jpg) ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: sticky;
-    top: 0;
-}
-  
-.real-estate::-webkit-scrollbar {
-    display: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
   
 .header{
@@ -28,8 +24,10 @@
     justify-content: space-around;
     align-items: center;
     padding: 10px;  
+    background-color: white;
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 
 .header-menu{
@@ -37,9 +35,6 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
 }
 
 .header-menu nav{
@@ -120,9 +115,6 @@
     align-items: center;
     margin-top: 200px;
     gap: 10px   ;
-    position: sticky;
-    top: 0;
-    z-index: 1;
 }
 
 .home-page h2{
@@ -144,17 +136,11 @@
     align-items: center;
     margin-top: 200px;
     gap: 10px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
 }
 
 .area-status h3{
     padding: 10px;
     background-color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1;
 }
 
 .area-status h3:hover{
@@ -168,9 +154,6 @@
     gap: 50px;
     padding-top: 20px;
     background-color: antiquewhite;
-    position: sticky;
-    top: 0;
-    z-index: 1;
 }
 
 .looking-for, .location, .property-size, .your-budget{
@@ -241,6 +224,7 @@
     justify-content: space-evenly;
     padding-top: 70px;
     background-color: antiquewhite;
+    gap: 10px;
 }
 
 .listing-property{
@@ -258,8 +242,8 @@
     align-items: start;
     justify-content: space-between;
     padding: 20px;
-    height: 60%;
-    width: 100%;
+    height: 300px;
+    width: 400px;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     background-image: url(Assets/listing-details1.jpg);
     background-size: cover;
@@ -297,11 +281,18 @@
     background-repeat: no-repeat;
 }
 
-.listing-details1 p{
+.listing-details1 > a, .listing-details2 > a, .listing-details3 > a{
+    text-decoration: none;
+}
+
+.sq-ft1 > h3,h5{
+color: black;
+}
+
+.listing-details1 > a > p{
     color: white;
     background-color: #76c720;
     padding: 5px;
-    text-decoration: none;
 }
 .listing-details1 h4{
     color: white;
@@ -393,6 +384,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 5px;
     background-color: antiquewhite;
 }
 
@@ -974,13 +966,17 @@
 }
 
 .footer-section{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 300px;
-    width: 100%;
-    background-color: #004274;
-    margin-top: 70px;
+    width: 100dvw;
+    height: auto;
+    background-color:#003359;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 50px;
+    padding: 50px;
+}
+
+.newsletter2 > button {
+    margin-top: 45px;
 }
 
 .discover > h3{
@@ -1018,18 +1014,12 @@
 .newsletter{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
 }
 
 .newsletter1 > h3{
-    opacity: 0;
-    margin-left: -400px;
     color: white;
     padding-bottom: 10px;
-    animation: ani-left 0.5s ease-in-out forwards;
-    animation-delay: 0.5s;
-    animation-timeline: view();
-    animation-range: entry 0% cover 30%;
 }
 
 .newsletter1 > input{
@@ -1107,7 +1097,218 @@
       margin-right: 0;
     }
   }
+
+  .responsive > .line{
+    width: 25px;
+    height: 5px;
+    background-color: black;
+    margin-top: 3px;
+    display: none;
+    margin-left: -75px;
+  }
   
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+.phn{
+    display: none;
+}
+
+/* media quaries */
+
+@media(max-width:1072px){
+    .footer-section{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 1030px) {
+    .header-logo{
+        display: none;
+    }
+
+   .phn {
+       display: block;
+   }
+
+    .responsive>.line {
+        display: block;
+    }
+
+    .header{
+        justify-content: space-between;
+    }
+
+    .header-menu li {
+        padding: 20px;
+    }
+
+    .header-menu nav ul {
+        position: absolute;
+        display: none;
+        top: 95px;
+        right: 0px;
+        background-color: white;
+        width: 100%;
+        transition: 1s all;
+        opacity: 0;
+    }
+
+    .header-menu nav ul.show {
+        display: block;
+        opacity: 1;
+        animation: show 1s;
+    }
+
+    @keyframes show {
+
+        0%{
+            transform: scaleY(0px);
+            opacity: 0;
+        }
+        100%{
+            transform: scaleY(10px);
+            opacity: 1;
+        }
+        
+    }
+
+
+
+@media(max-width:1242px){
+    .listing-details{
+        flex-wrap: wrap;
+    }
+
+   .inquiry-form{
+    flex-wrap: wrap;
+    height: auto;
+   } 
+}
+
+@media(max-width:1075px){
+    .explore-cities{
+        flex-wrap: wrap;
+    }  
+}
+
+
+@media(max-width:995px){
+    .meet-our-agents, .agents{
+        flex-wrap: wrap;
+    }    
+
+@media(max-width:950px){
+    .testimonials, .testimonials-persons{
+        flex-wrap: wrap;
+    }    
+
+@media(max-width:855px){
+    .property-details{
+        display: flex;
+        flex-wrap: wrap
+    }
+}
+    .home-page > p {
+        margin: 10px;
+    }
+
+    .discover > p{
+        flex-wrap: wrap;
+    }  
+    
+        .footer-section2{
+            flex-wrap: wrap;
+            justify-content: start;
+            padding: 20px;
+            height: auto;
+            gap: 20px;
+        }
+}
+
+@media(max-width:770px){
+    .residential-part4{
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width:700px){
+
+        .footer-section{
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows:repeat(4,1fr) ;
+        }
+}    
+
+    
+
+@media(max-width:610px){
+    .residential{
+        flex-wrap: wrap
+    }
+}
+
+@media(max-width:526px){
+    .footer-section{
+        padding: 20px;
+    }
+    .newsletter1>input{
+        padding: 10px 120px 10px 10px;
+    }
+}
+
+@media(max-width:455px){
+    .inquiry-from2{
+        width: 400px;
+        align-items: center;
+    }
+    .form>select,.form-container2>input,.property1>select{
+            padding-right: 150px;
+        }
+    .form-button>button {
+            padding:10px 120px;
+        }
+    .inquiry-from2>select{
+        padding: 10px 215px 10px 10px;
+    }
+    .form-container,.location1{
+            gap: 10px;
+            margin-left: 5px;
+    }
+    .form-container > input {
+        padding: 10px 0px;
+    }
+    .location2 > select {
+        padding: 10px 25px 10px 10px;
+    }
+}
+
+
+@media(min-width:319px) and (max-width:400px){
+    .listing-details1,.listing-details2,.listing-details3{
+        width: 300px;
+        height: 250px;
+    }
+
+    .listing-sq-ft,.listing-icons {
+        max-width: 300px;
+    }
+
+    .listing-property > h4 {
+       margin-left: 5px;
+    }
+
+}
+}}
