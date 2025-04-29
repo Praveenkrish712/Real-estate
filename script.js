@@ -1,10 +1,19 @@
-const ul = document.querySelector(".header-menu nav ul")
-const responsive = document.querySelector(".responsive")
+const menulogo=document.querySelector(".menu-logo");
+const Xmark=document.querySelector(".x-mark");
+const mobile=document.querySelector(".header-mobile");
 
-responsive.addEventListener("click", () => {
-  ul.classList.toggle("show")
+
+menulogo.addEventListener("click",()=>{
+  mobile.style.display="block";
+  menulogo.style.display="none"
 })
 
+Xmark.addEventListener("click",()=>{
+  mobile.style.display="none";
+  menulogo.style.display="block";
+})
 
-
-
+function closemenu() {
+  mobile.style.display="none";
+  menulogo.style.display="block";
+}

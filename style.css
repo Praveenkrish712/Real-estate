@@ -6,7 +6,28 @@
     font-family: "Roboto", sans-serif;
 }
 
+/* mobile-menu */
+
+.header-mobile{
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 80%;
+    height: 100%;
+    background-color:white;
+    z-index: 1000;
+}
+
+.header-mobile > svg{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* #head > nav > ul > li > a */
+
 .real-estate{
+    position: relative;
     height: 100vh;
     width: 100vw;
     background-image: url(Assets/home\ img4.jpg) ;
@@ -28,6 +49,10 @@
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+.menu-logo{
+    display: none;
 }
 
 .header-menu{
@@ -94,6 +119,12 @@
 
 .header-icon svg:hover{
     cursor: pointer;
+}
+
+.creat-listing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .creat-listing button{
@@ -1140,9 +1171,9 @@ color: black;
         display: none;
     }
 
-   .phn {
-       display: block;
-   }
+    .menu-logo{
+        display: block;
+    }
 
     .responsive>.line {
         display: block;
@@ -1156,21 +1187,21 @@ color: black;
         padding: 20px;
     }
 
-    .header-menu nav ul {
-        position: absolute;
+    #head{
         display: none;
-        top: 95px;
-        right: 0px;
-        background-color: white;
-        width: 100%;
-        transition: 1s all;
-        opacity: 0;
     }
 
-    .header-menu nav ul.show {
-        display: block;
-        opacity: 1;
-        animation: show 1s;
+    .creat-listing{
+        margin-top: 20px;
+    }
+
+    .header-mobile img{
+        margin: 10px;
+    }
+
+    .header-menu nav ul {
+        flex-direction: column;
+        gap: 0;
     }
 
     @keyframes show {
