@@ -968,6 +968,7 @@ color: black;
 .footer-section{
     width: 100dvw;
     height: auto;
+    margin-top: 150px;
     background-color:#003359;
     display: grid;
     grid-template-columns: repeat(4,1fr);
