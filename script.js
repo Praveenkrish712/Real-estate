@@ -50,14 +50,14 @@ document.querySelector('.form-button button').addEventListener('click', function
 
 
 
+ 
+document.getElementById('submitBtn').addEventListener('click', function () {
+  const email = document.getElementById('emailInput').value.trim();
 
-  document.getElementById('submitBtn').addEventListener('click', function () {
-    const email = document.getElementById('emailInput').value.trim();
-
-    if (email === "") {
-      alert("Please enter your email");
-    } else {
-      alert("Submitted successfully");
-      document.getElementById('emailInput').value = "";
-    }
-  });
+  if (email.includes('@')) {
+    alert("Form submitted successfully");
+    document.getElementById('emailInput').value = ""; // clear input
+  } else {
+    alert("Please enter a valid email");
+  }
+});
