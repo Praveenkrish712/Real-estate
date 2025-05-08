@@ -30,7 +30,7 @@ document.querySelector('.form-button button').addEventListener('click', function
   const checkbox = document.getElementById('Agreement');
 
   const nameRegex = /^[A-Za-z\s]+$/;
-  const emailValid = email.includes('@');
+  const emailValid = email.includes('@gmail.com');
   const allSelectsFilled = Array.from(selects).every(select => select.value !== '');
   const allInputsFilled = firstName && lastName && email && zip;
   const nameValid = nameRegex.test(firstName) && nameRegex.test(lastName);
@@ -54,7 +54,7 @@ document.querySelector('.form-button button').addEventListener('click', function
 document.getElementById('submitBtn').addEventListener('click', function () {
   const email = document.getElementById('emailInput').value.trim();
 
-  if (email.includes('@')) {
+  if (email.includes('@gmail.com')) {
     alert("Form submitted successfully");
     document.getElementById('emailInput').value = ""; // clear input
   } else {
