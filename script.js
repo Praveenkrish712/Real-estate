@@ -20,26 +20,33 @@ function closemenu() {
 
 
 
-  document.querySelector('.form-button button').addEventListener('click', function () {
-    const requiredInputs = [
-      ...document.querySelectorAll('.inquiry-from2 input[type="text"]'),
-      ...document.querySelectorAll('.inquiry-from2 select')
-    ];
+document.querySelector('.form-button button').addEventListener('click', function () {
+  const form = document.querySelector('.inquiry-from2');
+  const firstName = form.querySelector('input[name="firstname"]').value.trim();
+  const lastName = form.querySelector('input[name="lastname"]').value.trim();
+  const email = form.querySelector('input[name="emailaddress"]').value.trim();
+  const zip = form.querySelector('input[name="zipcode"]').value.trim();
+  const selects = form.querySelectorAll('select');
+  const checkbox = document.getElementById('Agreement');
 
-    const isAgreementChecked = document.getElementById('Agreement').checked;
+  const nameRegex = /^[A-Za-z\s]+$/;
+  const emailValid = email.includes('@');
+  const allSelectsFilled = Array.from(selects).every(select => select.value !== '');
+  const allInputsFilled = firstName && lastName && email && zip;
+  const nameValid = nameRegex.test(firstName) && nameRegex.test(lastName);
 
-    let allFilled = requiredInputs.every(input => input.value.trim() !== '');
+  if (allInputsFilled && allSelectsFilled && emailValid && nameValid && checkbox.checked) {
+    alert("Form submitted successfully");
 
-    if (!allFilled || !isAgreementChecked) {
-      alert("Please fill out all fields");
-    } else {
-      alert("Form submitted successfully");
+    // Optional: clear form after submission
+    form.querySelectorAll('input[type="text"], input[type="email"]').forEach(input => input.value = '');
+    form.querySelectorAll('select').forEach(select => select.value = '');
+    checkbox.checked = false;
+  } else {
+    alert("Please fill out all fields correctly");
+  }
+});
 
-
-      requiredInputs.forEach(input => input.value = '');
-      document.getElementById('Agreement').checked = false;
-    }
-  });
 
 
 
