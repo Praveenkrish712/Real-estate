@@ -1,522 +1,1000 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Real Estate</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <form class="buying-form">
+      <svg
+        class="x-mark-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 384 512"
+      >
+        <path
+          d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+        />
+      </svg>
+      <input type="text" id="fullName" placeholder="Full Name" />
+      <input type="email" id="email" placeholder="Email Address" />
+      <input type="text" id="phone" placeholder="Phone Number" />
+      <select name="" id="propertyType">
+        <option value="">Property Type</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Independent House">Independent House</option>
+        <option value="Plot/Land">Plot/Land</option>
+        <option value="Villa">Villa</option>
+        <option value="Commercial">Commercial</option>
+      </select>
+      <select name="" id="location">
+        <option value="">Preferred Location</option>
+        <option value="Miami">Miami</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Chicago">Chicago</option>
+        <option value="New York">New York</option>
+      </select>
+
+      <select name="" id="purpose">
+        <option value="">Purpose of Purchase</option>
+        <option value="Self-use">Self-use</option>
+        <option value="Investment">Investment</option>
+        <option value="Rental income">Rental income</option>
+      </select>
+          <button type="button" onclick="validateForm()">Submit</button>
+    </form>
     <div class="real-estate">
-        <div class="header">
-            <img src="Assets/Stackly_logo..png" alt="">
-            <svg class="menu-logo" xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
-            <div class="header-menu" id="head">
-                <nav>
-                    <ul>
-                        <li><a class="home" href="#home">Home</a></li>
-                        <li><a class="about" href="#about">About</a></li>
-                        <li><a class="listing" href="#listing">Listing</a></li>
-                        <li><a class="peoperty" href="#property details">Property Details</a></li>
-                        <li><a class="team" href="#team">Team</a></li>
-                        <li><a class="contact" href="#contact">Contact</a></li>
-                            <div class="contact-number">
-                                <svg xmlns="http://www.w3.org/2000/svg" hight="20px" width="20px" viewBox="0 0 512 512">
-                                    <path
-                                        d="M280 0C408.1 0 512 103.9 512 232c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-101.6-82.4-184-184-184c-13.3 0-24-10.7-24-24s10.7-24 24-24zm8 192a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm-32-72c0-13.3 10.7-24 24-24c75.1 0 136 60.9 136 136c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-48.6-39.4-88-88-88c-13.3 0-24-10.7-24-24zM117.5 1.4c19.4-5.3 39.7 4.6 47.4 23.2l40 96c6.8 16.3 2.1 35.2-11.6 46.3L144 207.3c33.3 70.4 90.3 127.4 160.7 160.7L345 318.7c11.2-13.7 30-18.4 46.3-11.6l96 40c18.6 7.7 28.5 28 23.2 47.4l-24 88C481.8 499.9 466 512 448 512C200.6 512 0 311.4 0 64C0 46 12.1 30.2 29.5 25.4l88-24z" />
-                                </svg>
-                                <p>(800)9876543</p>
-                            </div>
-                            <div class="creat-listing" >
-                                <a href="#form"><button>INQUIRY FORM</button></a>
-                            </div>
-                    </ul>
-                </nav>
-            </div>
+      <div class="header">
+        <img src="Assets/Stackly_logo..png" alt="" />
+        <svg
+          class="menu-logo"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20px"
+          hight="20px"
+          viewBox="0 0 448 512"
+        >
+          <path
+            d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+          />
+        </svg>
+        <div class="header-menu" id="head">
+          <nav>
+            <ul>
+              <li><a class="home" href="#home">Home</a></li>
+              <li><a class="about" href="#about">About</a></li>
+              <li><a class="listing" href="#listing">Listing</a></li>
+              <li>
+                <a class="peoperty" href="#property details"
+                  >Property Details</a
+                >
+              </li>
+              <li><a class="team" href="#team">Team</a></li>
+              <li><a class="contact" href="#contact">Contact</a></li>
+              <div class="contact-number">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  hight="20px"
+                  width="20px"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M280 0C408.1 0 512 103.9 512 232c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-101.6-82.4-184-184-184c-13.3 0-24-10.7-24-24s10.7-24 24-24zm8 192a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm-32-72c0-13.3 10.7-24 24-24c75.1 0 136 60.9 136 136c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-48.6-39.4-88-88-88c-13.3 0-24-10.7-24-24zM117.5 1.4c19.4-5.3 39.7 4.6 47.4 23.2l40 96c6.8 16.3 2.1 35.2-11.6 46.3L144 207.3c33.3 70.4 90.3 127.4 160.7 160.7L345 318.7c11.2-13.7 30-18.4 46.3-11.6l96 40c18.6 7.7 28.5 28 23.2 47.4l-24 88C481.8 499.9 466 512 448 512C200.6 512 0 311.4 0 64C0 46 12.1 30.2 29.5 25.4l88-24z"
+                  />
+                </svg>
+                <p>(800)9876543</p>
+              </div>
+              <div class="creat-listing">
+                <a href="#form"><button>INQUIRY FORM</button></a>
+              </div>
+            </ul>
+          </nav>
         </div>
-        <div class="header-mobile">
-            <svg class="x-mark" xmlns="http://www.w3.org/2000/svg" hight="20px" width="20px" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
-            <img src="Assets/Stackly_logo..png" alt="">
-            <div class="header-menu">
-                <nav>
-                    <ul>
-                        <li class="home" onclick="closemenu()"><a href="#home">Home</a></li>
-                        <li onclick="closemenu()"><a href="#about">About</a></li>
-                        <li onclick="closemenu()"><a href="#listing">Listing</a></li>
-                        <li onclick="closemenu()"><a href="#property details">Property Details</a></li>
-                        <li onclick="closemenu()"><a href="#team">Team</a></li>
-                        <li onclick="closemenu()"><a href="#contact">Contact</a></li>
-                            <div class="contact-number">
-                                <svg xmlns="http://www.w3.org/2000/svg" hight="20px" width="20px" viewBox="0 0 512 512">
-                                    <path
-                                        d="M280 0C408.1 0 512 103.9 512 232c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-101.6-82.4-184-184-184c-13.3 0-24-10.7-24-24s10.7-24 24-24zm8 192a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm-32-72c0-13.3 10.7-24 24-24c75.1 0 136 60.9 136 136c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-48.6-39.4-88-88-88c-13.3 0-24-10.7-24-24zM117.5 1.4c19.4-5.3 39.7 4.6 47.4 23.2l40 96c6.8 16.3 2.1 35.2-11.6 46.3L144 207.3c33.3 70.4 90.3 127.4 160.7 160.7L345 318.7c11.2-13.7 30-18.4 46.3-11.6l96 40c18.6 7.7 28.5 28 23.2 47.4l-24 88C481.8 499.9 466 512 448 512C200.6 512 0 311.4 0 64C0 46 12.1 30.2 29.5 25.4l88-24z" />
-                                </svg>
-                                <p>(800)9876543</p>
-                            </div>
-                            <div class="creat-listing" >
-                                <a href="#form"><button>INQUIRY FORM</button></a>
-                            </div>
-                    </ul>
-                </nav>
-            </div>
+      </div>
+      <div class="header-mobile">
+        <svg
+          class="x-mark"
+          xmlns="http://www.w3.org/2000/svg"
+          hight="20px"
+          width="20px"
+          viewBox="0 0 384 512"
+        >
+          <path
+            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+          />
+        </svg>
+        <img src="Assets/Stackly_logo..png" alt="" />
+        <div class="header-menu">
+          <nav>
+            <ul>
+              <li class="home" onclick="closemenu()">
+                <a href="#home">Home</a>
+              </li>
+              <li onclick="closemenu()"><a href="#about">About</a></li>
+              <li onclick="closemenu()"><a href="#listing">Listing</a></li>
+              <li onclick="closemenu()">
+                <a href="#property details">Property Details</a>
+              </li>
+              <li onclick="closemenu()"><a href="#team">Team</a></li>
+              <li onclick="closemenu()"><a href="#contact">Contact</a></li>
+              <div class="contact-number">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  hight="20px"
+                  width="20px"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M280 0C408.1 0 512 103.9 512 232c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-101.6-82.4-184-184-184c-13.3 0-24-10.7-24-24s10.7-24 24-24zm8 192a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm-32-72c0-13.3 10.7-24 24-24c75.1 0 136 60.9 136 136c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-48.6-39.4-88-88-88c-13.3 0-24-10.7-24-24zM117.5 1.4c19.4-5.3 39.7 4.6 47.4 23.2l40 96c6.8 16.3 2.1 35.2-11.6 46.3L144 207.3c33.3 70.4 90.3 127.4 160.7 160.7L345 318.7c11.2-13.7 30-18.4 46.3-11.6l96 40c18.6 7.7 28.5 28 23.2 47.4l-24 88C481.8 499.9 466 512 448 512C200.6 512 0 311.4 0 64C0 46 12.1 30.2 29.5 25.4l88-24z"
+                  />
+                </svg>
+                <p>(800)9876543</p>
+              </div>
+              <div class="creat-listing">
+                <a href="#form"><button>INQUIRY FORM</button></a>
+              </div>
+            </ul>
+          </nav>
         </div>
-        <div class="home-page" id="home">
-            <h2>Welcome To Houzez</h2>
-            <p>Discover dream homes, market insights, investment tips, and property<br>trends to guide your real estate journey with expert knowledge and advice.</p>
+      </div>
+      <div class="home-page" id="home">
+        <h2>Welcome To Houzez</h2>
+        <p>
+          Discover dream homes, market insights, investment tips, and
+          property<br />trends to guide your real estate journey with expert
+          knowledge and advice.
+        </p>
+      </div>
+      <div class="area-status">
+        <h3>All Status</h3>
+        <h3>For Rent</h3>
+        <h3>For Sale</h3>
+      </div>
+      <div class="property-details">
+        <div class="looking-for">
+          <h5>LOOKING FOR</h5>
+          <select name="" id="">
+            <option value="">Property Type</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Office">Office</option>
+            <option value="Shop">Shop</option>
+            <option value="Residential">Residential</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Condo">Condo</option>
+            <option value="Multi Family Home">Multi Family Home</option>
+            <option value="Single Family Home">Single Family Home</option>
+            <option value="Studio">Studio</option>
+            <option value="Villa">Villa</option>
+          </select>
         </div>
-        <div class="area-status">
-            <h3>All Status</h3>
-            <h3>For Rent</h3>
-            <h3>For Sale</h3>
+        <div class="location">
+          <h5>LOCATION</h5>
+          <select name="" id="">
+            <option value="">All Cities</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="Miami">Miami</option>
+            <option value="New York">New York</option>
+          </select>
         </div>
-        <div class="property-details">
-            <div class="looking-for">
-                <h5>LOOKING FOR</h5>
-                <select name="" id="">
-                    <option value="">Property Type</option>
-                    <option value="Commercial">Commercial</option>
-                    <option value="Office">Office</option>
-                    <option value="Shop">Shop</option>
-                    <option value="Residential">Residential</option>
-                    <option value="Apartment">Apartment</option>
-                    <option value="Condo">Condo</option>
-                    <option value="Multi Family Home">Multi Family Home</option>
-                    <option value="Single Family Home">Single Family Home</option>
-                    <option value="Studio">Studio</option>
-                    <option value="Villa">Villa</option>
-                </select>
-            </div>
-            <div class="location">
-                <h5>LOCATION</h5>
-                <select name="" id="">
-                    <option value="">All Cities</option>
-                    <option value="Chicago">Chicago</option>
-                    <option value="Los Angeles">Los Angeles</option>
-                    <option value="Miami">Miami</option>
-                    <option value="New York">New York</option>
-                </select>
-            </div>
-            <div class="property-size">
-                <h5>PROPERTY SIZE</h5>
-                <select name="" id="">
-                    <option value="">Bedrooms</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-            <div class="your-budget">
-                <h5>YOUR BUDGET</h5>
-                <select name="" id="">
-                    <option value="">Max.Price</option>
-                    <option value="Any">Any</option>
-                    <option value="$5,000">$5,000</option>
-                    <option value="$10,000">$10,000</option>
-                    <option value="$50,000">$50,000</option>
-                </select>
-            </div>
+        <div class="property-size">
+          <h5>PROPERTY SIZE</h5>
+          <select name="" id="">
+            <option value="">Bedrooms</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
         </div>
-        <div class="Featured-Listings" id="listing">
-            <h1>Discover Our Featured Listings</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+        <div class="your-budget">
+          <h5>YOUR BUDGET</h5>
+          <select name="" id="">
+            <option value="">Max.Price</option>
+            <option value="Any">Any</option>
+            <option value="$5,000">$5,000</option>
+            <option value="$10,000">$10,000</option>
+            <option value="$50,000">$50,000</option>
+          </select>
         </div>
-        <div class="listing-details">
-            <div class="listing-property">
-                <div class="listing-details1">
-                        <p>FEATURED</p>
-                        <h4>FOR SALE</h4>
-                        <div class="sq-ft1">
-                            <h3>$876,000</h3>
-                            <h5>$7,600/sq ft</h5>
-                        </div>
-                        <div class="featured-icons">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 512 512"><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8l0-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5l0 3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20-.1-.1s0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5l0 3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2l0-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
-                        </div>
-                </div>
-                <div class="listing-sq-ft">
-                    <h3>New Apartment Nice View</h3>
-                    <p>8100 S Ashland Ave,Chicago, IL 60620, Washington, USA</p>
-                </div>
-                <div class="listing-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 640 512"><path d="M32 32c17.7 0 32 14.3 32 32l0 256 224 0 0-160c0-17.7 14.3-32 32-32l224 0c53 0 96 43 96 96l0 224c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-32-224 0-32 0L64 416l0 32c0 17.7-14.3 32-32 32s-32-14.3-32-32L0 64C0 46.3 14.3 32 32 32zm144 96a80 80 0 1 1 0 160 80 80 0 1 1 0-160z"/></svg>
-                    <p>3</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 512 512"><path d="M64 131.9C64 112.1 80.1 96 99.9 96c9.5 0 18.6 3.8 25.4 10.5l16.2 16.2c-21 38.9-17.4 87.5 10.9 123L151 247c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0L345 121c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-1.3 1.3c-35.5-28.3-84.2-31.9-123-10.9L170.5 61.3C151.8 42.5 126.4 32 99.9 32C44.7 32 0 76.7 0 131.9L0 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-316.1zM256 352a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm32-32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
-                    <p>1</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 512 512"><path d="M135.2 117.4L109.1 192l293.8 0-26.1-74.6C372.3 104.6 360.2 96 346.6 96L165.4 96c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32l181.2 0c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2l0 144 0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L96 400l0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L0 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
-                    <p>1</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 512 512"><path d="M.2 468.9C2.7 493.1 23.1 512 48 512l96 0 320 0c26.5 0 48-21.5 48-48l0-96c0-26.5-21.5-48-48-48l-48 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-48c0-26.5-21.5-48-48-48L48 0C21.5 0 0 21.5 0 48L0 368l0 96c0 1.7 .1 3.3 .2 4.9z"/></svg>
-                    <p>1789 Sq Ft</p>
-                </div>
-                <h4>Apartment</h4>
-            </div>
-            <div class="listing-property">
-                <div class="listing-details2">
-                        <p>FEATURED</p>
-                        <h4>FOR SALE</h4>
-                        <div class="sq-ft1">
-                            <h3>$4,500/Mo</h3>
-                        </div>
-                        <div class="featured-icons">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 512 512"><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8l0-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5l0 3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20-.1-.1s0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5l0 3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2l0-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
-                        </div>
-                </div>
-                <div class="listing-sq-ft">
-                    <h3>Renovated Studio</h3>
-                    <p>194 Mercer Street, 627 Broadway, New York, NY 10012, USA</p>
-                </div>
-                <div class="listing-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 640 512"><path d="M32 32c17.7 0 32 14.3 32 32l0 256 224 0 0-160c0-17.7 14.3-32 32-32l224 0c53 0 96 43 96 96l0 224c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-32-224 0-32 0L64 416l0 32c0 17.7-14.3 32-32 32s-32-14.3-32-32L0 64C0 46.3 14.3 32 32 32zm144 96a80 80 0 1 1 0 160 80 80 0 1 1 0-160z"/></svg>
-                    <p>4</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 512 512"><path d="M64 131.9C64 112.1 80.1 96 99.9 96c9.5 0 18.6 3.8 25.4 10.5l16.2 16.2c-21 38.9-17.4 87.5 10.9 123L151 247c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0L345 121c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-1.3 1.3c-35.5-28.3-84.2-31.9-123-10.9L170.5 61.3C151.8 42.5 126.4 32 99.9 32C44.7 32 0 76.7 0 131.9L0 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-316.1zM256 352a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm32-32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
-                    <p>2</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 512 512"><path d="M135.2 117.4L109.1 192l293.8 0-26.1-74.6C372.3 104.6 360.2 96 346.6 96L165.4 96c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32l181.2 0c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2l0 144 0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L96 400l0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L0 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
-                    <p>1</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 512 512"><path d="M.2 468.9C2.7 493.1 23.1 512 48 512l96 0 320 0c26.5 0 48-21.5 48-48l0-96c0-26.5-21.5-48-48-48l-48 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-48c0-26.5-21.5-48-48-48L48 0C21.5 0 0 21.5 0 48L0 368l0 96c0 1.7 .1 3.3 .2 4.9z"/></svg>
-                    <p>1200 Sq Ft</p>
-                </div>
-                <h4>Studio</h4>
-            </div>
-            <div class="listing-property">
-                <div class="listing-details3">
-                        <p>FEATURED</p>
-                        <h4>FOR SALE</h4>
-                        <div class="sq-ft1">
-                            <h3>$540,000</h3>
-                            <h5>$3,700/sq ft</h5>
-                        </div>
-                        <div class="featured-icons">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 512 512"><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8l0-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5l0 3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20-.1-.1s0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5l0 3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2l0-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
-                        </div>
-                </div>
-                <div class="listing-sq-ft">
-                    <h3>Light and Modern Apartment</h3>
-                    <p>2436, SW 8th, Miami, 567394, FL 33135, Washington, USA</p>
-                </div>
-                <div class="listing-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 640 512"><path d="M32 32c17.7 0 32 14.3 32 32l0 256 224 0 0-160c0-17.7 14.3-32 32-32l224 0c53 0 96 43 96 96l0 224c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-32-224 0-32 0L64 416l0 32c0 17.7-14.3 32-32 32s-32-14.3-32-32L0 64C0 46.3 14.3 32 32 32zm144 96a80 80 0 1 1 0 160 80 80 0 1 1 0-160z"/></svg>
-                    <p>2</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 512 512"><path d="M64 131.9C64 112.1 80.1 96 99.9 96c9.5 0 18.6 3.8 25.4 10.5l16.2 16.2c-21 38.9-17.4 87.5 10.9 123L151 247c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0L345 121c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-1.3 1.3c-35.5-28.3-84.2-31.9-123-10.9L170.5 61.3C151.8 42.5 126.4 32 99.9 32C44.7 32 0 76.7 0 131.9L0 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-316.1zM256 352a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm32-32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
-                    <p>3</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 512 512"><path d="M135.2 117.4L109.1 192l293.8 0-26.1-74.6C372.3 104.6 360.2 96 346.6 96L165.4 96c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32l181.2 0c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2l0 144 0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L96 400l0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L0 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
-                    <p>1</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 512 512"><path d="M.2 468.9C2.7 493.1 23.1 512 48 512l96 0 320 0c26.5 0 48-21.5 48-48l0-96c0-26.5-21.5-48-48-48l-48 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-48c0-26.5-21.5-48-48-48L48 0C21.5 0 0 21.5 0 48L0 368l0 96c0 1.7 .1 3.3 .2 4.9z"/></svg>
-                    <p>1200 Sq Ft</p>
-                </div>
-                <h4>Apartment</h4>
-            </div>
+      </div>
+      <div class="Featured-Listings" id="listing">
+        <h1>Discover Our Featured Listings</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+        <button onclick="toggleExtraButtons()">Add Property</button>
+        <div class="extrabutton" id="extraButtons">
+          <button onclick="buybtn()">Buy</button>
+          <button onclick="buybtn()">Sell</button>
         </div>
-        <div class="residential">
-            <div class="residential-part1">
-                <h1>Residential</h1>
-                <p>Lorem ipsum dolor sit amet,<br>consectetur adipiscing elit, sed do<br>eiusmod tempor incidi dunt</p>
-                <div class="apartment">
-                    <h5>23 Properties</h5>
-                    <h4>Apartment</h4>
-                </div>
+      </div>
+      <div class="listing-details">
+        <div class="listing-property">
+          <div class="listing-details1">
+            <p>FEATURED</p>
+            <h4>FOR SALE</h4>
+            <div class="sq-ft1">
+              <h3>$876,000</h3>
+              <h5>$7,600/sq ft</h5>
             </div>
-            <div class="residential-part2">
-                <h5>7 Properties</h5>
-                <h4>Studio</h4>
+            <div class="featured-icons">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8l0-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5l0 3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20-.1-.1s0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5l0 3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2l0-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                />
+              </svg>
             </div>
-            <div class="residential-part3">
-                <div class="studio">
-                    <h5>12 Properties</h5>
-                    <h4>Single Family Home</h4>
-                </div>
-                <div class="villa">
-                    <h5>10 Properties</h5>
-                    <h4>Villa</h4>
-                </div>
-            </div>
+          </div>
+          <div class="listing-sq-ft">
+            <h3>New Apartment Nice View</h3>
+            <p>8100 S Ashland Ave,Chicago, IL 60620, Washington, USA</p>
+          </div>
+          <div class="listing-icons">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="30px"
+              width="30px"
+              viewBox="0 0 640 512"
+            >
+              <path
+                d="M32 32c17.7 0 32 14.3 32 32l0 256 224 0 0-160c0-17.7 14.3-32 32-32l224 0c53 0 96 43 96 96l0 224c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-32-224 0-32 0L64 416l0 32c0 17.7-14.3 32-32 32s-32-14.3-32-32L0 64C0 46.3 14.3 32 32 32zm144 96a80 80 0 1 1 0 160 80 80 0 1 1 0-160z"
+              />
+            </svg>
+            <p>3</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="30px"
+              width="30px"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M64 131.9C64 112.1 80.1 96 99.9 96c9.5 0 18.6 3.8 25.4 10.5l16.2 16.2c-21 38.9-17.4 87.5 10.9 123L151 247c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0L345 121c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-1.3 1.3c-35.5-28.3-84.2-31.9-123-10.9L170.5 61.3C151.8 42.5 126.4 32 99.9 32C44.7 32 0 76.7 0 131.9L0 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-316.1zM256 352a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm32-32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+              />
+            </svg>
+            <p>1</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="30px"
+              width="30px"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M135.2 117.4L109.1 192l293.8 0-26.1-74.6C372.3 104.6 360.2 96 346.6 96L165.4 96c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32l181.2 0c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2l0 144 0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L96 400l0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L0 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+              />
+            </svg>
+            <p>1</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="30px"
+              width="30px"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M.2 468.9C2.7 493.1 23.1 512 48 512l96 0 320 0c26.5 0 48-21.5 48-48l0-96c0-26.5-21.5-48-48-48l-48 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-48c0-26.5-21.5-48-48-48L48 0C21.5 0 0 21.5 0 48L0 368l0 96c0 1.7 .1 3.3 .2 4.9z"
+              />
+            </svg>
+            <p>1789 Sq Ft</p>
+          </div>
+          <h4>Apartment</h4>
         </div>
-        <div class="residential-part4">
-            <div class="residential2">
-                <h1>Commercial</h1>
-                <p>Lorem ipsum dolor sit amet,<br>consectetur adipiscing elit, sed do<br>eiusmod tempor incidi dunt</p>
+        <div class="listing-property">
+          <div class="listing-details2">
+            <p>FEATURED</p>
+            <h4>FOR SALE</h4>
+            <div class="sq-ft1">
+              <h3>$4,500/Mo</h3>
             </div>
-            <div class="office">
-                <h5>3 Properties</h5>
-                <h4>Office</h4>
+            <div class="featured-icons">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8l0-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5l0 3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20-.1-.1s0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5l0 3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2l0-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                />
+              </svg>
             </div>
-            <div class="shop">
-                <h5>3 Properties</h5>
-                <h4>Shop</h4>
-            </div>
+          </div>
+          <div class="listing-sq-ft">
+            <h3>Renovated Studio</h3>
+            <p>194 Mercer Street, 627 Broadway, New York, NY 10012, USA</p>
+          </div>
+          <div class="listing-icons">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="30px"
+              width="30px"
+              viewBox="0 0 640 512"
+            >
+              <path
+                d="M32 32c17.7 0 32 14.3 32 32l0 256 224 0 0-160c0-17.7 14.3-32 32-32l224 0c53 0 96 43 96 96l0 224c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-32-224 0-32 0L64 416l0 32c0 17.7-14.3 32-32 32s-32-14.3-32-32L0 64C0 46.3 14.3 32 32 32zm144 96a80 80 0 1 1 0 160 80 80 0 1 1 0-160z"
+              />
+            </svg>
+            <p>4</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="30px"
+              width="30px"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M64 131.9C64 112.1 80.1 96 99.9 96c9.5 0 18.6 3.8 25.4 10.5l16.2 16.2c-21 38.9-17.4 87.5 10.9 123L151 247c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0L345 121c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-1.3 1.3c-35.5-28.3-84.2-31.9-123-10.9L170.5 61.3C151.8 42.5 126.4 32 99.9 32C44.7 32 0 76.7 0 131.9L0 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-316.1zM256 352a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm32-32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+              />
+            </svg>
+            <p>2</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="30px"
+              width="30px"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M135.2 117.4L109.1 192l293.8 0-26.1-74.6C372.3 104.6 360.2 96 346.6 96L165.4 96c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32l181.2 0c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2l0 144 0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L96 400l0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L0 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+              />
+            </svg>
+            <p>1</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="30px"
+              width="30px"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M.2 468.9C2.7 493.1 23.1 512 48 512l96 0 320 0c26.5 0 48-21.5 48-48l0-96c0-26.5-21.5-48-48-48l-48 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-48c0-26.5-21.5-48-48-48L48 0C21.5 0 0 21.5 0 48L0 368l0 96c0 1.7 .1 3.3 .2 4.9z"
+              />
+            </svg>
+            <p>1200 Sq Ft</p>
+          </div>
+          <h4>Studio</h4>
         </div>
-        <div class="inquiry-form" id="form">
-            <div class="inquirys">
-                <h1>Why Houzez Is The<br>Perfect Choice?</h1>
-                <h2>01.<br>Suitable For Agents And<br>Agencies</h2>
-                <p>Never miss a sale! It's never been easier to<br>turn leads into real customers</p>
+        <div class="listing-property">
+          <div class="listing-details3">
+            <p>FEATURED</p>
+            <h4>FOR SALE</h4>
+            <div class="sq-ft1">
+              <h3>$540,000</h3>
+              <h5>$3,700/sq ft</h5>
             </div>
-            <div class="inquirys2">
-                <h2>02.<br>Design Custom Leads Capture Forms</h2>
-                <p>Keep track of your leads without having to pay<br>for an external CRM</p>
-                <div class="inquirys3">
-                    <h2>03.<br>Customizable Theme</h2>
-                    <p>Customize your website according to your<br>expectations and requirements</p>
-                </div>
+            <div class="featured-icons">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8l0-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5l0 3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20-.1-.1s0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5l0 3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2l0-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                />
+              </svg>
             </div>
-            <div class="inquiry-from2">
-                <h3>Real Estate Inquiry Form</h3>
-                <p>Design custom lead capture forms that integrate<br>with the Houzez CRM</p>
-                <h4>Inquiry Type</h4>
-                <select name="" id="">
-                    <option value="">Select</option>
-                    <option value="Purchase">Purchase</option>
-                    <option value="Rent">Rent</option>
-                    <option value="Sell">Sell</option>
-                    <option value="Miss">Miss</option>
-                    <option value="Evaluation">Evaluation</option>
-                    <option value="Mortgage">Mortgage</option>
-                </select>
-                <div class="form">
-                    <h4>Information</h4>
-                    <select class="form" name="" id="">
-                        <option value="">I'm a</option>
-                        <option value="i'm a real estate agent">i'm a real estate agent</option>
-                        <option value="i'm a property owner">i'm a property owner</option>
-                    </select>
-                </div>
-                <div class="form-container">
-                    <input type="text" placeholder="First Name" name="firstname">
-                    <input type="text" placeholder="Last Name" name="lastname">
-                </div>
-                <div class="form-container2">
-                    <input type="email" placeholder="Email Address" name="emailaddress">
-                </div>
-                <div class="location1">
-                    <div class="location2">
-                        <h4>Location</h4>
-                        <select class="form" name="" id="">
-                            <option value="">Select</option>
-                            <option value="Chicago">Chicago</option>
-                            <option value="Los Angeles">Los Angeles</option>
-                            <option value="Miami">Miami</option>
-                            <option value="New York">New York</option>
-                        </select>
-                    </div>
-                    <div class="location3">
-                        <input type="text" placeholder="Zip Code" name="zipcode">
-                    </div>
-                </div>
-                <div class="property1">
-                    <h4>Property</h4>
-                    <select name="" id="">
-                        <option value="">Select Type</option>
-                        <option value="Commercial">Commercial</option>
-                        <option value="Office">Office</option>
-                        <option value="Shop">Shop</option>
-                        <option value="Residential">Residential</option>
-                        <option value="Apartment">Apartment</option>
-                        <option value="Condo">Condo</option>
-                        <option value="Multi Family Home">Multi Family Home</option>
-                        <option value="Single Family Home">Single Family Home</option>
-                        <option value="Studio">Studio</option>
-                        <option value="Villa">Villa</option>
-                    </select>
-                </div>
-                <div class="agreement">
-                    <h4>GDPR Agreement</h4>
-                    <input type="checkbox" id="Agreement">
-                    <label for="Agreement"> I consent to having this website store my submitted information</label>
-                </div>
-                <div class="form-button">
-                    <button>Submit</button>
-                </div>
-            </div>
+          </div>
+          <div class="listing-sq-ft">
+            <h3>Light and Modern Apartment</h3>
+            <p>2436, SW 8th, Miami, 567394, FL 33135, Washington, USA</p>
+          </div>
+          <div class="listing-icons">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="30px"
+              width="30px"
+              viewBox="0 0 640 512"
+            >
+              <path
+                d="M32 32c17.7 0 32 14.3 32 32l0 256 224 0 0-160c0-17.7 14.3-32 32-32l224 0c53 0 96 43 96 96l0 224c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-32-224 0-32 0L64 416l0 32c0 17.7-14.3 32-32 32s-32-14.3-32-32L0 64C0 46.3 14.3 32 32 32zm144 96a80 80 0 1 1 0 160 80 80 0 1 1 0-160z"
+              />
+            </svg>
+            <p>2</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="30px"
+              width="30px"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M64 131.9C64 112.1 80.1 96 99.9 96c9.5 0 18.6 3.8 25.4 10.5l16.2 16.2c-21 38.9-17.4 87.5 10.9 123L151 247c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0L345 121c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-1.3 1.3c-35.5-28.3-84.2-31.9-123-10.9L170.5 61.3C151.8 42.5 126.4 32 99.9 32C44.7 32 0 76.7 0 131.9L0 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-316.1zM256 352a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm64 64a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm32-32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+              />
+            </svg>
+            <p>3</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="30px"
+              width="30px"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M135.2 117.4L109.1 192l293.8 0-26.1-74.6C372.3 104.6 360.2 96 346.6 96L165.4 96c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32l181.2 0c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2l0 144 0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L96 400l0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L0 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+              />
+            </svg>
+            <p>1</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="30px"
+              width="30px"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M.2 468.9C2.7 493.1 23.1 512 48 512l96 0 320 0c26.5 0 48-21.5 48-48l0-96c0-26.5-21.5-48-48-48l-48 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-48c0-26.5-21.5-48-48-48L48 0C21.5 0 0 21.5 0 48L0 368l0 96c0 1.7 .1 3.3 .2 4.9z"
+              />
+            </svg>
+            <p>1200 Sq Ft</p>
+          </div>
+          <h4>Apartment</h4>
         </div>
-        <div class="finest-properties">
-            <h1>Check Our Selection Of Finest Properties</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+      </div>
+      <div class="residential">
+        <div class="residential-part1">
+          <h1>Residential</h1>
+          <p>
+            Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit, sed
+            do<br />eiusmod tempor incidi dunt
+          </p>
+          <div class="apartment">
+            <h5>23 Properties</h5>
+            <h4>Apartment</h4>
+          </div>
         </div>
-        <div class="listing-details" id="property details">
-            <div class="listing-property">
-                <div class="listing-details1">
-                        <p>FEATURED</p>
-                        <h4>FOR SALE</h4>
-                        <div class="sq-ft1">
-                            <h3>$876,000</h3>
-                            <h5>$7,600/sq ft</h5>
-                        </div>
-                        <div class="featured-icons">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 512 512"><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8l0-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5l0 3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20-.1-.1s0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5l0 3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2l0-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
-                        </div>
-                </div>
-            </div>
-            <div class="listing-property">
-                <div class="listing-details2">
-                        <p>FEATURED</p>
-                        <h4>FOR SALE</h4>
-                        <div class="sq-ft1">
-                            <h3>$4,500/Mo</h3>
-                        </div>
-                        <div class="featured-icons">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 512 512"><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8l0-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5l0 3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20-.1-.1s0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5l0 3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2l0-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
-                        </div>
-                </div>
-            </div>
-            <div class="listing-property">
-                <div class="listing-details3">
-                        <p>FEATURED</p>
-                        <h4>FOR SALE</h4>
-                        <div class="sq-ft1">
-                            <h3>$540,000</h3>
-                            <h5>$3,700/sq ft</h5>
-                        </div>
-                        <div class="featured-icons">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 512 512"><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8l0-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5l0 3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20-.1-.1s0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5l0 3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2l0-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" hight="20px" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
-                        </div>
-                </div>
-            </div>
+        <div class="residential-part2">
+          <h5>7 Properties</h5>
+          <h4>Studio</h4>
         </div>
-        <div class="explore-cities" id="about">
-            <div class="city-place">
-                <h3>Explore Cities</h3>
-                <p>Lorem ipsum dolor sit amet,<br>consectetur adipiscing elit, sed<br>do eiusmod tempor incididunt<br>ut labore et dolore magna</p>
-            </div>
-            <div class="city1">
-                <h5>13 Properties</h5>
-                <h4>Chicago</h4>
-            </div>
-            <div class="city2">
-                <h5>21 Properties</h5>
-                <h4>Miami</h4>
-            </div>
-            <div class="city3">
-                <h5>10 Properties</h5>
-                <h4>New York</h4>
-            </div>
-            <div class="city4">
-                <h5>14 Properties</h5>
-                <h4>Los Angeles</h4>
-            </div>
+        <div class="residential-part3">
+          <div class="studio">
+            <h5>12 Properties</h5>
+            <h4>Single Family Home</h4>
+          </div>
+          <div class="villa">
+            <h5>10 Properties</h5>
+            <h4>Villa</h4>
+          </div>
         </div>
-        <div class="meet-our-agents" id="team">
-            <h1>Meet Our Agents</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+      </div>
+      <div class="residential-part4">
+        <div class="residential2">
+          <h1>Commercial</h1>
+          <p>
+            Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit, sed
+            do<br />eiusmod tempor incidi dunt
+          </p>
         </div>
-        <div class="agents">
-            <div class="agent-member1">
-                <img src="Assets/agent-1.jpg" alt="">
-                <h2>Vincent Fuller</h2>
-                <h3>Real Estate Agent , Country House Real<br>Estate</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit. Phasellus porta justo eget<br>risus consectetur,...</p>
-            </div>
-            <div class="agent-member1">
-                <img src="Assets/agent-2.jpg" alt="">
-                <h2>Brittany Watkins</h2>
-                <h3>Company Agent , All American Real<br>Estate</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit. Phasellus porta justo eget<br>risus consectetur,...</p>
-            </div>
-            <div class="agent-member1">
-                <img src="Assets/agent-3.jpg" alt="">
-                <h2>Michelle Ramirez</h2>
-                <h3>Company Agent , Modern House Real<br>Estate</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit. Phasellus porta justo eget<br>risus consectetur,...</p>
-            </div>
+        <div class="office">
+          <h5>3 Properties</h5>
+          <h4>Office</h4>
         </div>
-        <div class="testimonials">
-            <h1>Testimonials</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+        <div class="shop">
+          <h5>3 Properties</h5>
+          <h4>Shop</h4>
         </div>
-        <div class="testimonials-persons">
-            <div class="quote1">
-                <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 448 512"><path d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z"/></svg>
-                <p>Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit, sed do eiusmod tempor<br>incididunt ut labore et dolore magna<br>aliqua.</p>
-                <div class="test-person1">
-                    <img src="Assets/agent-1.jpg" width="100px" height="100px">
-                    <div class="person-distination">
-                        <p>Roy Bennett</p>
-                        <p>Manager, Company Inc.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="quote2">
-                <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 448 512"><path d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z"/></svg>
-                <p>Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit, sed do eiusmod tempor<br>incididunt ut labore et dolore magna<br>aliqua.</p>
-                <div class="test-person2">
-                    <img src="Assets/agent-2.jpg" width="100px" height="100px">
-                    <div class="person-distination">
-                        <p>Kenya Soval</p>
-                        <p>Realtor, Company Inc.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="quote3">
-                <svg xmlns="http://www.w3.org/2000/svg" hight="30px" width="30px" viewBox="0 0 448 512"><path d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z"/></svg>
-                <p>Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit, sed do eiusmod tempor<br>incididunt ut labore et dolore magna<br>aliqua.</p>
-                <div class="test-person3">
-                    <img src="Assets/agent-3.jpg" width="100px" height="100px">
-                    <div class="person-distination">
-                        <p>Kathleen Peterson</p>
-                        <p>Manager, Company Inc.</p>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="inquiry-form" id="form">
+        <div class="inquirys">
+          <h1>Why Houzez Is The<br />Perfect Choice?</h1>
+          <h2>01.<br />Suitable For Agents And<br />Agencies</h2>
+          <p>
+            Never miss a sale! It's never been easier to<br />turn leads into
+            real customers
+          </p>
         </div>
-        <div class="footer-section" id="contact">
-            <div class="discover">
-                <h3>Discover</h3>
-                <p>Miami</p>
-                <p>Los Angeles</p>
-                <p>Chicago</p>
-                <p>New York</p>
-            </div>
-            <div class="contact-us">
-                <h3>Contact Us</h3>
-                <p>774 NE 84th St Miami, FL 33879</p>
-                <p>879 456 1349</p>
-                <p>email@houzez.com</p>
-            </div>
-            <div class="newsletter">
-                <div class="newsletter1">
-                    <h3>Newsletter</h3>
-                    <input type="email" id="emailInput" placeholder="Enter your email">
-                    <p>Houzez is a premium WordPress theme for Designers & Real Estate Agents.</p>
-                </div>
-                
-            </div>
-            <div class="newsletter2">
-                <button id="submitBtn">Submit</button>
-            </div>
+        <div class="inquirys2">
+          <h2>02.<br />Design Custom Leads Capture Forms</h2>
+          <p>
+            Keep track of your leads without having to pay<br />for an external
+            CRM
+          </p>
+          <div class="inquirys3">
+            <h2>03.<br />Customizable Theme</h2>
+            <p>
+              Customize your website according to your<br />expectations and
+              requirements
+            </p>
+          </div>
         </div>
-         <div class="footer-section2">
-            <p>© Houzez - All rights reserved</p>
-            <img src="Assets/Stackly_logo..png" alt="">
-            <div class="footer-icons">
-                <a href="https://www.linkedin.com/company/the-stackly/posts/?feedView=all">
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="20px" width="20px" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
-                </a>
-                <a href="https://www.instagram.com/thestackly">
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="20px" width="20px" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-                </a>
-                <a href="https://x.com/The_Stackly">
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="20px" width="20px" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
-                </a>
-                <a href="https://www.facebook.com/share/1BrqaZkJRe/">
-                    <svg xmlns="http://www.w3.org/2000/svg" hight="22px" width="22px" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg>
-                </a>
+        <div class="inquiry-from2">
+          <h3>Real Estate Inquiry Form</h3>
+          <p>
+            Design custom lead capture forms that integrate<br />with the Houzez
+            CRM
+          </p>
+          <h4>Inquiry Type</h4>
+          <select name="" id="">
+            <option value="">Select</option>
+            <option value="Purchase">Purchase</option>
+            <option value="Rent">Rent</option>
+            <option value="Sell">Sell</option>
+            <option value="Miss">Miss</option>
+            <option value="Evaluation">Evaluation</option>
+            <option value="Mortgage">Mortgage</option>
+          </select>
+          <div class="form">
+            <h4>Information</h4>
+            <select class="form" name="" id="">
+              <option value="">I'm a</option>
+              <option value="i'm a real estate agent">
+                i'm a real estate agent
+              </option>
+              <option value="i'm a property owner">i'm a property owner</option>
+            </select>
+          </div>
+          <div class="form-container">
+            <input type="text" placeholder="First Name" name="firstname" />
+            <input type="text" placeholder="Last Name" name="lastname" />
+          </div>
+          <div class="form-container2">
+            <input
+              type="email"
+              placeholder="Email Address"
+              name="emailaddress"
+            />
+          </div>
+          <div class="location1">
+            <div class="location2">
+              <h4>Location</h4>
+              <select class="form" name="" id="">
+                <option value="">Select</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Miami">Miami</option>
+                <option value="New York">New York</option>
+              </select>
             </div>
+            <div class="location3">
+              <input type="text" placeholder="Zip Code" name="zipcode" />
+            </div>
+          </div>
+          <div class="property1">
+            <h4>Property</h4>
+            <select name="" id="">
+              <option value="">Select Type</option>
+              <option value="Commercial">Commercial</option>
+              <option value="Office">Office</option>
+              <option value="Shop">Shop</option>
+              <option value="Residential">Residential</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Condo">Condo</option>
+              <option value="Multi Family Home">Multi Family Home</option>
+              <option value="Single Family Home">Single Family Home</option>
+              <option value="Studio">Studio</option>
+              <option value="Villa">Villa</option>
+            </select>
+          </div>
+          <div class="agreement">
+            <h4>GDPR Agreement</h4>
+            <input type="checkbox" id="Agreement" />
+            <label for="Agreement">
+              I consent to having this website store my submitted
+              information</label
+            >
+          </div>
+          <div class="form-button">
+            <button>Submit</button>
+          </div>
         </div>
+      </div>
+      <div class="finest-properties">
+        <h1>Check Our Selection Of Finest Properties</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+      </div>
+      <div class="listing-details" id="property details">
+        <div class="listing-property">
+          <div class="listing-details1">
+            <p>FEATURED</p>
+            <h4>FOR SALE</h4>
+            <div class="sq-ft1">
+              <h3>$876,000</h3>
+              <h5>$7,600/sq ft</h5>
+            </div>
+            <div class="featured-icons">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8l0-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5l0 3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20-.1-.1s0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5l0 3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2l0-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="listing-property">
+          <div class="listing-details2">
+            <p>FEATURED</p>
+            <h4>FOR SALE</h4>
+            <div class="sq-ft1">
+              <h3>$4,500/Mo</h3>
+            </div>
+            <div class="featured-icons">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8l0-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5l0 3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20-.1-.1s0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5l0 3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2l0-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="listing-property">
+          <div class="listing-details3">
+            <p>FEATURED</p>
+            <h4>FOR SALE</h4>
+            <div class="sq-ft1">
+              <h3>$540,000</h3>
+              <h5>$3,700/sq ft</h5>
+            </div>
+            <div class="featured-icons">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8l0-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5l0 3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20-.1-.1s0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5l0 3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2l0-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                hight="20px"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="explore-cities" id="about">
+        <div class="city-place">
+          <h3>Explore Cities</h3>
+          <p>
+            Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit, sed<br />do
+            eiusmod tempor incididunt<br />ut labore et dolore magna
+          </p>
+        </div>
+        <div class="city1">
+          <h5>13 Properties</h5>
+          <h4>Chicago</h4>
+        </div>
+        <div class="city2">
+          <h5>21 Properties</h5>
+          <h4>Miami</h4>
+        </div>
+        <div class="city3">
+          <h5>10 Properties</h5>
+          <h4>New York</h4>
+        </div>
+        <div class="city4">
+          <h5>14 Properties</h5>
+          <h4>Los Angeles</h4>
+        </div>
+      </div>
+      <div class="meet-our-agents" id="team">
+        <h1>Meet Our Agents</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+      </div>
+      <div class="agents">
+        <div class="agent-member1">
+          <img src="Assets/agent-1.jpg" alt="" />
+          <h2>Vincent Fuller</h2>
+          <h3>Real Estate Agent , Country House Real<br />Estate</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur<br />adipiscing elit.
+            Phasellus porta justo eget<br />risus consectetur,...
+          </p>
+        </div>
+        <div class="agent-member1">
+          <img src="Assets/agent-2.jpg" alt="" />
+          <h2>Brittany Watkins</h2>
+          <h3>Company Agent , All American Real<br />Estate</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur<br />adipiscing elit.
+            Phasellus porta justo eget<br />risus consectetur,...
+          </p>
+        </div>
+        <div class="agent-member1">
+          <img src="Assets/agent-3.jpg" alt="" />
+          <h2>Michelle Ramirez</h2>
+          <h3>Company Agent , Modern House Real<br />Estate</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur<br />adipiscing elit.
+            Phasellus porta justo eget<br />risus consectetur,...
+          </p>
+        </div>
+      </div>
+      <div class="testimonials">
+        <h1>Testimonials</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+      </div>
+      <div class="testimonials-persons">
+        <div class="quote1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            hight="30px"
+            width="30px"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z"
+            />
+          </svg>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur<br />adipiscing elit, sed do
+            eiusmod tempor<br />incididunt ut labore et dolore magna<br />aliqua.
+          </p>
+          <div class="test-person1">
+            <img src="Assets/agent-1.jpg" width="100px" height="100px" />
+            <div class="person-distination">
+              <p>Roy Bennett</p>
+              <p>Manager, Company Inc.</p>
+            </div>
+          </div>
+        </div>
+        <div class="quote2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            hight="30px"
+            width="30px"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z"
+            />
+          </svg>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur<br />adipiscing elit, sed do
+            eiusmod tempor<br />incididunt ut labore et dolore magna<br />aliqua.
+          </p>
+          <div class="test-person2">
+            <img src="Assets/agent-2.jpg" width="100px" height="100px" />
+            <div class="person-distination">
+              <p>Kenya Soval</p>
+              <p>Realtor, Company Inc.</p>
+            </div>
+          </div>
+        </div>
+        <div class="quote3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            hight="30px"
+            width="30px"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z"
+            />
+          </svg>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur<br />adipiscing elit, sed do
+            eiusmod tempor<br />incididunt ut labore et dolore magna<br />aliqua.
+          </p>
+          <div class="test-person3">
+            <img src="Assets/agent-3.jpg" width="100px" height="100px" />
+            <div class="person-distination">
+              <p>Kathleen Peterson</p>
+              <p>Manager, Company Inc.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-section" id="contact">
+        <div class="discover">
+          <h3>Discover</h3>
+          <p>Miami</p>
+          <p>Los Angeles</p>
+          <p>Chicago</p>
+          <p>New York</p>
+        </div>
+        <div class="contact-us">
+          <h3>Contact Us</h3>
+          <p>774 NE 84th St Miami, FL 33879</p>
+          <p>879 456 1349</p>
+          <p>email@houzez.com</p>
+        </div>
+        <div class="newsletter">
+          <div class="newsletter1">
+            <h3>Newsletter</h3>
+            <input
+              type="email"
+              id="emailInput"
+              placeholder="Enter your email"
+            />
+            <p>
+              Houzez is a premium WordPress theme for Designers & Real Estate
+              Agents.
+            </p>
+          </div>
+        </div>
+        <div class="newsletter2">
+          <button id="submitBtn">Submit</button>
+        </div>
+      </div>
+      <div class="footer-section2">
+        <p>© Houzez - All rights reserved</p>
+        <img src="Assets/Stackly_logo..png" alt="" />
+        <div class="footer-icons">
+          <a
+            href="https://www.linkedin.com/company/the-stackly/posts/?feedView=all"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="20px"
+              width="20px"
+              viewBox="0 0 448 512"
+            >
+              <path
+                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+              />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/thestackly">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="20px"
+              width="20px"
+              viewBox="0 0 448 512"
+            >
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+              />
+            </svg>
+          </a>
+          <a href="https://x.com/The_Stackly">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="20px"
+              width="20px"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              />
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/share/1BrqaZkJRe/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              hight="22px"
+              width="22px"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
 
     <script src="./script.js" charset="UTF-8"></script>
-</body>
+  </body>
 </html>
