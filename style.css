@@ -298,10 +298,16 @@ p {
   right: 10%;
 }
 
-.buying-form input {
+#file{
   border: 0;
   background-color: #e0e0e0;
   padding: 10px 30px 10px 5px;
+}
+
+#fullName, #email, #phone{
+  border: 0;
+  background-color: #e0e0e0;
+  padding: 10px 157px 10px 5px;
 }
 
 .buying-form input::placeholder{
@@ -315,7 +321,15 @@ p {
 }
 
 #location{
-  padding: 10px 47px 10px 5px;
+  padding: 10px 174px 10px 5px;
+}
+
+#propertyType{
+  padding: 10px 165px 10px 5px;
+}
+
+#purpose{
+  padding: 10px 160px 10px 5px;
 }
 
 .buying-form button{

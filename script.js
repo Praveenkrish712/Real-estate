@@ -22,45 +22,85 @@ function closemenu() {
   menulogo.style.display = "block";
 }
 
-document
-  .querySelector(".form-button button")
-  .addEventListener("click", function () {
-    const form = document.querySelector(".inquiry-from2");
-    const firstName = form
-      .querySelector('input[name="firstname"]')
-      .value.trim();
-    const lastName = form.querySelector('input[name="lastname"]').value.trim();
-    const email = form.querySelector('input[name="emailaddress"]').value.trim();
-    const zip = form.querySelector('input[name="zipcode"]').value.trim();
-    const selects = form.querySelectorAll("select");
-    const checkbox = document.getElementById("Agreement");
 
-    const nameRegex = /^[A-Za-z\s]+$/;
-    const emailValid = email.includes("@gmail.com");
-    const allSelectsFilled = Array.from(selects).every(
-      (select) => select.value !== ""
-    );
-    const allInputsFilled = firstName && lastName && email && zip;
-    const nameValid = nameRegex.test(firstName) && nameRegex.test(lastName);
 
-    if (
-      allInputsFilled &&
-      allSelectsFilled &&
-      emailValid &&
-      nameValid &&
-      checkbox.checked
-    ) {
-      alert("Form submitted successfully");
+ document.querySelector(".form-button button").addEventListener("click", function (e) {
+    e.preventDefault();
 
-      form
-        .querySelectorAll('input[type="text"], input[type="email"]')
-        .forEach((input) => (input.value = ""));
-      form.querySelectorAll("select").forEach((select) => (select.value = ""));
-      checkbox.checked = false;
-    } else {
-      alert("Please fill out all fields correctly");
+    const inquirySelect = document.getElementById("inquirySelect").value.trim();
+    const inquiryInfo = document.getElementById("inquiryInfo").value.trim();
+    const firstName = document.getElementById("inquiryFirstname").value.trim();
+    const lastName = document.getElementById("inquiryLastname").value.trim();
+    const email = document.getElementById("inquiryEmail").value.trim();
+    const location = document.getElementById("inquiryLocation").value.trim();
+    const zip = document.getElementById("inquiryZipcode").value.trim();
+    const property = document.getElementById("inquiryProperty").value.trim();
+    const checkbox = document.getElementById("inquiryCheckbox").checked;
+
+    const nameRegex = /^[A-Za-z]+$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    const zipRegex = /^\d{6}$/;
+
+    if (inquirySelect === "") {
+      alert("Please select an inquiry type.");
+      return;
     }
+
+    if (inquiryInfo === "") {
+      alert("Please select who you are.");
+      return;
+    }
+
+    if (!nameRegex.test(firstName)) {
+      alert("First name must contain only letters.");
+      return;
+    }
+
+    if (!nameRegex.test(lastName)) {
+      alert("Last name must contain only letters.");
+      return;
+    }
+
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid Gmail address (must end with @gmail.com).");
+      return;
+    }
+
+    if (location === "") {
+      alert("Please select a location.");
+      return;
+    }
+
+    if (!zipRegex.test(zip)) {
+      alert("Zip code must be exactly 6 digits.");
+      return;
+    }
+
+    if (property === "") {
+      alert("Please select a property type.");
+      return;
+    }
+
+    if (!checkbox) {
+      alert("You must agree to the GDPR terms.");
+      return;
+    }
+
+    alert("Form submitted successfully!");
+
+    // Reset form
+    document.getElementById("inquirySelect").value = "";
+    document.getElementById("inquiryInfo").value = "";
+    document.getElementById("inquiryFirstname").value = "";
+    document.getElementById("inquiryLastname").value = "";
+    document.getElementById("inquiryEmail").value = "";
+    document.getElementById("inquiryLocation").value = "";
+    document.getElementById("inquiryZipcode").value = "";
+    document.getElementById("inquiryProperty").value = "";
+    document.getElementById("inquiryCheckbox").checked = false;
   });
+
+
 
 document.getElementById("submitBtn").addEventListener("click", function () {
   const email = document.getElementById("emailInput").value.trim();
@@ -97,50 +137,58 @@ Xlogo.addEventListener("click", function () {
 
 
 
-function validateForm() {
-  const fullName = document.getElementById("fullName").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const propertyType = document.getElementById("propertyType").value;
-  const location = document.getElementById("location").value;
-  const purpose = document.getElementById("purpose").value;
 
-  const nameRegex = /^[A-Za-z\s]+$/;
-  const phoneRegex = /^[0-9]+$/;
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+  function validateForm() {
+    const form = document.querySelector(".buying-form");
+    const fullName = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const propertyType = document.getElementById("propertyType").value;
+    const location = document.getElementById("location").value;
+    const purpose = document.getElementById("purpose").value;
+    const file = document.getElementById("file").files[0];
 
-  if (!fullName) {
-    alert("Please fill out Full Name.");
-    return;
-  }
-  if (!nameRegex.test(fullName)) {
-    alert("Full Name should only contain letters.");
-    return;
-  }
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const phoneRegex = /^\d+$/;
+    const emailRegex = /^[\w.-]+@gmail\.com$/i;
 
-  if (!email) {
-    alert("Please fill out Email Address.");
-    return;
-  }
-  if (!emailRegex.test(email)) {
-    alert("Email must end with '@gmail.com'.");
-    return;
-  }
+    if (!fullName || !nameRegex.test(fullName)) {
+      alert("Please enter a valid full name (letters only).");
+      return;
+    }
 
-  if (!phone) {
-    alert("Please fill out Phone Number.");
-    return;
-  }
-  if (!phoneRegex.test(phone)) {
-    alert("Phone Number should only contain digits.");
-    return;
-  }
+    if (!email || !emailRegex.test(email)) {
+      alert("Please enter a valid Gmail address (must end with @gmail.com).");
+      return;
+    }
 
-  if (!propertyType || !location || !purpose) {
-    alert("Please fill out all fields.");
-    return;
-  }
+    if (!phone || !phoneRegex.test(phone)) {
+      alert("Please enter a valid phone number ( 10 digits only).");
+      return;
+    }
 
-  alert("Thank you for your interest");
-  document.querySelector(".buying-form").reset(); // Reset form after successful submit
-}
+    if (!propertyType) {
+      alert("Please select a property type.");
+      return;
+    }
+
+    if (!location) {
+      alert("Please select a preferred location.");
+      return;
+    }
+
+    if (!purpose) {
+      alert("Please select the purpose of purchase.");
+      return;
+    }
+
+    if (!file) {
+      alert("Please upload a file.");
+      return;
+    }
+
+    alert("Thank you for your interesting!");
+
+    // Reset form after successful submission
+    form.reset();
+  }

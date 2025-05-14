@@ -48,7 +48,8 @@
         <option value="Investment">Investment</option>
         <option value="Rental income">Rental income</option>
       </select>
-          <button type="button" onclick="validateForm()">Submit</button>
+      <input type="file" id="file">
+        <button type="button" onclick="validateForm()">Submit</button>
     </form>
     <div class="real-estate">
       <div class="header">
@@ -567,7 +568,7 @@
             CRM
           </p>
           <h4>Inquiry Type</h4>
-          <select name="" id="">
+          <select name="" id="inquirySelect">
             <option value="">Select</option>
             <option value="Purchase">Purchase</option>
             <option value="Rent">Rent</option>
@@ -578,7 +579,7 @@
           </select>
           <div class="form">
             <h4>Information</h4>
-            <select class="form" name="" id="">
+            <select class="form" name="" id="inquiryInfo">
               <option value="">I'm a</option>
               <option value="i'm a real estate agent">
                 i'm a real estate agent
@@ -587,20 +588,16 @@
             </select>
           </div>
           <div class="form-container">
-            <input type="text" placeholder="First Name" name="firstname" />
-            <input type="text" placeholder="Last Name" name="lastname" />
+            <input type="text" id="inquiryFirstname" placeholder="First Name" />
+            <input type="text" id="inquiryLastname" placeholder="Last Name" />
           </div>
           <div class="form-container2">
-            <input
-              type="email"
-              placeholder="Email Address"
-              name="emailaddress"
-            />
+            <input type="email" id="inquiryEmail" placeholder="Email Address"/>
           </div>
           <div class="location1">
             <div class="location2">
               <h4>Location</h4>
-              <select class="form" name="" id="">
+              <select class="form" name="" id="inquiryLocation">
                 <option value="">Select</option>
                 <option value="Chicago">Chicago</option>
                 <option value="Los Angeles">Los Angeles</option>
@@ -609,12 +606,12 @@
               </select>
             </div>
             <div class="location3">
-              <input type="text" placeholder="Zip Code" name="zipcode" />
+              <input type="text" id="inquiryZipcode" placeholder="Zip Code" />
             </div>
           </div>
           <div class="property1">
             <h4>Property</h4>
-            <select name="" id="">
+            <select name="" id="inquiryProperty">
               <option value="">Select Type</option>
               <option value="Commercial">Commercial</option>
               <option value="Office">Office</option>
@@ -630,14 +627,14 @@
           </div>
           <div class="agreement">
             <h4>GDPR Agreement</h4>
-            <input type="checkbox" id="Agreement" />
+            <input type="checkbox" id="inquiryCheckbox" />
             <label for="Agreement">
               I consent to having this website store my submitted
               information</label
             >
           </div>
           <div class="form-button">
-            <button>Submit</button>
+            <button type="submit">Submit</button>
           </div>
         </div>
       </div>
