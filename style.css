@@ -8,7 +8,7 @@
 
 /* mobile-menu */
 
-.x-mark-logo {
+.x-mark-logo, .X-markLogin{
   width: 20px;
   height: 20px;
   fill: red;
@@ -133,10 +133,11 @@ p {
   cursor: pointer;
 }
 
-.creat-listing {
+.creat-listing{
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
 .creat-listing button {
@@ -292,10 +293,52 @@ p {
   position: relative;
 }
 
-.x-mark-logo{
+.login-page{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 100vh;
+  width: 100vw;
+  background-color: #c9a9a9;
   position: absolute;
-  top: -10%;
-  right: 10%;
+}
+
+.login-page h2{
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.login-page input{
+  border: 0;
+  padding: 10px 70px 10px 5px;
+}
+
+.login-page button{
+  border: 0;
+  color: white;
+  background-color: #0d5ed1;
+  padding: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.login-page p span{
+  color: #0d5ed1;
+  cursor: pointer;
+}
+
+.x-mark-logo{
+  position: relative;
+  left: 40%;
+  bottom: 30px;
+}
+
+.X-markLogin{
+  position: relative;
+  left: 40%;
+  bottom: 30px;
 }
 
 #file{

@@ -6,6 +6,7 @@ const mobile = document.querySelector(".header-mobile");
 const form = document.querySelector(".buying-form");
 
 const Xlogo = document.querySelector(".x-mark-logo");
+const Xlogin = document.querySelector(".X-markLogin");
 
 menulogo.addEventListener("click", () => {
   mobile.style.display = "block";
@@ -15,6 +16,11 @@ menulogo.addEventListener("click", () => {
 Xmark.addEventListener("click", () => {
   mobile.style.display = "none";
   menulogo.style.display = "block";
+});
+
+Xlogin.addEventListener("click", () => {
+  loginPage.style.display = "none";
+  realEstate.style.display = "block";
 });
 
 function closemenu() {
@@ -131,6 +137,7 @@ function buybtn() {
 Xlogo.addEventListener("click", function () {
   realEstate.style.display = "block";
   form.style.display = "none";
+  loginPage.style.display="none";
 });
 
 
@@ -193,3 +200,38 @@ Xlogo.addEventListener("click", function () {
     // Reset form after successful submission
     form.reset();
   }
+
+
+
+  const showLoginBtn = document.getElementById('showLoginBtn');
+  const loginPage = document.getElementById('loginPage');
+
+  showLoginBtn.addEventListener('click', () => {
+    loginPage.style.display = 'flex';
+    realEstate.style.display= "none";
+  });
+
+
+      function validateLogin() {
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPassword").value;
+
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+      if (!emailRegex.test(email)) {
+        alert("Email must be a valid @gmail.com address.");
+        return;
+      }
+
+      if (!passwordRegex.test(password)) {
+        alert("Password must be at least 8 characters long and include uppercase, lowercase, number, and symbol.");
+        return;
+      }
+
+      // ✅ Redirect if validation passes
+      window.location.href="index.html"; // Replace with your actual link
+    }
+
+
+  

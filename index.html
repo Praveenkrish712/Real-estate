@@ -51,6 +51,14 @@
       <input type="file" id="file">
         <button type="button" onclick="validateForm()">Submit</button>
     </form>
+    <div class="login-page" id="loginPage" >
+      <svg class="X-markLogin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+      <h2>Welcome</h2>
+      <input type="email" id="loginEmail" placeholder="Email"/>
+      <input type="text" id="loginPassword" placeholder="Password"/>
+      <button onclick="validateLogin()">Login</button>
+      <p>Don't have an account? <span>SignUp</span></p>
+    </div>
     <div class="real-estate">
       <div class="header">
         <img src="Assets/Stackly_logo..png" alt="" />
@@ -71,11 +79,7 @@
               <li><a class="home" href="#home">Home</a></li>
               <li><a class="about" href="#about">About</a></li>
               <li><a class="listing" href="#listing">Listing</a></li>
-              <li>
-                <a class="peoperty" href="#property details"
-                  >Property Details</a
-                >
-              </li>
+              <li><a class="peoperty" href="#property details">Property Details</a></li>
               <li><a class="team" href="#team">Team</a></li>
               <li><a class="contact" href="#contact">Contact</a></li>
               <div class="contact-number">
@@ -93,6 +97,7 @@
               </div>
               <div class="creat-listing">
                 <a href="#form"><button>INQUIRY FORM</button></a>
+                <button id="showLoginBtn">Login</button>
               </div>
             </ul>
           </nav>
@@ -119,9 +124,7 @@
               </li>
               <li onclick="closemenu()"><a href="#about">About</a></li>
               <li onclick="closemenu()"><a href="#listing">Listing</a></li>
-              <li onclick="closemenu()">
-                <a href="#property details">Property Details</a>
-              </li>
+              <li onclick="closemenu()"><a href="#property details">Property Details</a></li>
               <li onclick="closemenu()"><a href="#team">Team</a></li>
               <li onclick="closemenu()"><a href="#contact">Contact</a></li>
               <div class="contact-number">
@@ -139,6 +142,7 @@
               </div>
               <div class="creat-listing">
                 <a href="#form"><button>INQUIRY FORM</button></a>
+                <button>Login</button>
               </div>
             </ul>
           </nav>
@@ -208,7 +212,7 @@
       <div class="Featured-Listings" id="listing">
         <h1>Discover Our Featured Listings</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-        <button onclick="toggleExtraButtons()">Add Property</button>
+        <button onclick="toggleExtraButtons()" id="redirectPage">Add Property</button>
         <div class="extrabutton" id="extraButtons">
           <button onclick="buybtn()">Buy</button>
           <button onclick="buybtn()">Sell</button>
