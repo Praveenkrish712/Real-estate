@@ -149,7 +149,7 @@ Xlogo.addEventListener("click", function () {
     const file = document.getElementById("file").files[0];
 
     const nameRegex = /^[A-Za-z\s]+$/;
-    const phoneRegex = /^\d+$/;
+    const phoneRegex = /^\d{10}$/;
     const emailRegex = /^[\w.-]+@gmail\.com$/i;
 
     if (!fullName || !nameRegex.test(fullName)) {
@@ -162,8 +162,9 @@ Xlogo.addEventListener("click", function () {
       return;
     }
 
+    
     if (!phone || !phoneRegex.test(phone)) {
-      alert("Please enter a valid phone number ( 10 digits only).");
+      alert("Please enter a valid 10-digit phone number.");
       return;
     }
 
